@@ -51,9 +51,16 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="app\templates\image\" />
     <Folder Include="RecipeMPin\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\image\02_09_BlueberryBreakfastSmoothie_Final-small-landscape-300.jpg" />
+    <Content Include="app\templates\image\08_11_GnocchiInMarinaraSauceWithBuffaloMozzarella_titlePicture-small-landscape-300.jpg" />
+    <Content Include="app\templates\image\17_05_PotatoDumplings_titlePicture-small-landscape-300.jpg" />
+    <Content Include="app\templates\image\38_08_ChaiVeganHotChocolate_final-small-landscape-300.jpg" />
+    <Content Include="app\templates\image\38_15_Butterbeer_final-small-landscape-300.jpg" />
+    <Content Include="app\templates\image\BengaliSalmon_TitlePicture-small-landscape-300.jpg" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
