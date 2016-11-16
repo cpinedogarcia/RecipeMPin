@@ -61,6 +61,7 @@
     <Content Include="app\static\app\image\38_08_ChaiVeganHotChocolate_final-small-landscape-300.jpg" />
     <Content Include="app\static\app\image\38_15_Butterbeer_final-small-landscape-300.jpg" />
     <Content Include="app\static\app\image\BengaliSalmon_TitlePicture-small-landscape-300.jpg" />
+    <Content Include="app\static\app\image\LOGOTIPO_SIN_FONDO-01.png" />
     <Content Include="app\static\app\image\logo_black.png" />
     <Content Include="app\static\app\image\logo_white.png" />
     <Content Include="requirements.txt" />

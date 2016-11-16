@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
       margin-bottom: 50px;
@@ -24,104 +24,135 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
-  </style>
+
+
+
+    </style>
 </head>
 <body>
 
 <div class="jumbotron">
-  <div class="container text-center">
-    {% load staticfiles %}
-    <img src="{% static "app/image/logo_black.png" %}" style="width:128px;height:128px;">
-    <h1>Tasty Meals</h1>
-    <p>Tasty, Easy & Happy</p>
-  </div>
+    <div class="container text-center">
+        <table>
+            <tr>
+                <td>
+                    {% load staticfiles %}
+                    <img src="{% static "app/image/logo_black.png" %}" style="width:128px;height:128px;">
+                </td>
+                <td width="100%">
+                    <h1>Tasty Meals</h1>
+                    <p>Tasty, Easy & Happy</p>
+                </td>
+                <td><br/></td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <img src="{% static "app/image/logo_white.png" %}" style="width:36px;height:36px;">
-      </a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="{% static "app/image/logo_white.png" %}" style="width:36px;height:36px;">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="#">Upload</a></li>
+                <li><a href="#">Featured</a></li>
+                <li><a href="#">Staff Pick</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="#">Upload</a></li>
-        <li><a href="#">Feature</a></li>
-        <li><a href="#">Stores</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-      </ul>
-    </div>
-  </div>
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Blueberry smoothie</div>
+                <div class="panel-body"><img src="{% static "app\image\02_09_BlueberryBreakfastSmoothie_Final-small-landscape-300.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="panel-footer">A tasty breakfast for a healthy start into the new day.</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Gnocchi in marinara sauce</div>
+                <div class="panel-body"><img src="{% static "app\image\08_11_GnocchiInMarinaraSauceWithBuffaloMozzarella_titlePicture-small-landscape-300.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="panel-footer">A handful of selected ingredients give this simple dish its outstanding
+                    aroma.
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">Potato dumplings</div>
+                <div class="panel-body"><img src="{% static "app\image\17_05_PotatoDumplings_titlePicture-small-landscape-300.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="panel-footer">These dumplings are a German classic. I like to prepare them as a side dish
+                    for Christmas because they can be easily combined with most of the traditional main dishes.
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-sm-4">
-      <div class="panel panel-danger">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-success">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-  </div>
-</div><br>
+</div>
+<br>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Chai hot chocolate</div>
+                <div class="panel-body"><img src="{% static "app\image\38_08_ChaiVeganHotChocolate_final-small-landscape-300.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="panel-footer">The spice of chai combined with the sweetness of hot cocoa—the perfect winter
+                    drink!
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Butterbeer</div>
+                <div class="panel-body"><img src="{% static "app\image\38_15_Butterbeer_final-small-landscape-300.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="panel-footer">A real treat for children and adults alike. Tastes just like the one in the
+                    Three Broomsticks, I’d imagine!
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Spiced salmon</div>
+                <div class="panel-body"><img src="{% static "app\image\BengaliSalmon_TitlePicture-small-landscape-300.jpg" %}" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="panel-footer">This dish is so fresh with just a tingling of spiciness – absolutely
+                    perfect!
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-  </div>
-</div><br><br>
+</div>
+<br><br>
 
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>
-  <form class="form-inline">Get deals:
-    <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Sign Up</button>
-  </form>
+    <p>&copy; {{ year }} CIMAT, A.C.  Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> in
+        Guadalupe, Zacatecas.</p>
+    <form class="form-inline">Get notified when a new recipe comes:
+        <input type="email" class="form-control" size="50" placeholder="Email Address">
+        <button type="button" class="btn btn-danger">Sign Up</button>
+    </form>
 </footer>
 
 </body>

@@ -27,7 +27,7 @@ def contact(request):
         'app/contact.html',
         {
             'title':'Contact',
-            'message':'Your contact page.',
+            'message':'You can contact us at:',
             'year':datetime.now().year,
         }
     )
@@ -40,7 +40,7 @@ def about(request):
         'app/about.html',
         {
             'title':'About',
-            'message':'Your application description page.',
+            'message':'M-Pin project for the Computer Systems Security class of the Master in Software Engineering at the Mathematics Research Center A.C.',
             'year':datetime.now().year,
         }
     )
