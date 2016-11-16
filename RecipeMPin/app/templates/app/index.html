@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
@@ -30,8 +30,10 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Online Store</h1>
-    <p>Mission, Vission & Values</p>
+    {% load staticfiles %}
+    <img src="{% static "app/image/logo_black.png" %}" style="width:128px;height:128px;">
+    <h1>Tasty Meals</h1>
+    <p>Tasty, Easy & Happy</p>
   </div>
 </div>
 
@@ -43,7 +45,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">
+        <img src="{% static "app/image/logo_white.png" %}" style="width:36px;height:36px;">
+      </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
