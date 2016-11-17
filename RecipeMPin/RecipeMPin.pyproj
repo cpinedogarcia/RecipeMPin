@@ -55,6 +55,7 @@
     <Folder Include="RecipeMPin\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\static\app\content\style.css" />
     <Content Include="app\static\app\image\02_09_BlueberryBreakfastSmoothie_Final-small-landscape-300.jpg" />
     <Content Include="app\static\app\image\08_11_GnocchiInMarinaraSauceWithBuffaloMozzarella_titlePicture-small-landscape-300.jpg" />
     <Content Include="app\static\app\image\17_05_PotatoDumplings_titlePicture-small-landscape-300.jpg" />
@@ -64,6 +65,7 @@
     <Content Include="app\static\app\image\LOGOTIPO_SIN_FONDO-01.png" />
     <Content Include="app\static\app\image\logo_black.png" />
     <Content Include="app\static\app\image\logo_white.png" />
+    <Content Include="app\static\app\scripts\index.js" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
