@@ -1,15 +1,14 @@
-{% extends "app/layout.html" %}
-
-{% block content %}
+{% extends "app/layout.html" %} {% block content %}
 
 <h2>{{ title }}.</h2>
 <h3>{{ message }}</h3>
+<h4>{{ alice }}</h4>
 
 <p>
     {% load staticfiles %}
-<center>
-    <img src="{% static " app/image/LOGOTIPO_SIN_FONDO-01.png" %}" style="width:500px;height:500px;"/>
-</center>
+    <center>
+        <img src="{% static "app/image/LOGOTIPO_SIN_FONDO-01.png" %}" style="width:500px;height:500px;" />
+    </center>
 </p>
 
 {% endblock %}
