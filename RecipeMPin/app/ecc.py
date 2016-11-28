@@ -1,9 +1,9 @@
 import hashlib
 from random import SystemRandom
 
-from RecipeMPin.app.cliente import get_x, generate_u, generate_v
-from RecipeMPin.app.server import get_y, magic_happens
-from RecipeMPin.app.trusted_authority import generate_s
+from RecipeMPin.app.client import Client
+from RecipeMPin.app.server import Server
+from RecipeMPin.app.trusted_authority import TrustedAuthority
 
 
 def hash_identity(identity):
@@ -23,11 +23,19 @@ def save_s(s):
 
 def test_pin():
     alpha = 1234
-    x, y, identity, s = get_x(), get_y(), 'carlos.pinedo@cimat.mx', generate_s(alpha)
-    u = generate_u(identity, x)
-    v = generate_v(y, identity, alpha, s, x)
-    save_s(s)
-    print(magic_happens(v, u, identity, s))
+    identity = 'carlos.pinedo@cimat.mx'
+    client = Client(identity, alpha)
+    server = Server(identity)
+    ta = TrustedAuthority(alpha)
+    x, y, secret = client.get_x(), server.get_y(), ta.get_secret()
+    u = client.generate_u()
+    v = client.generate_v(y, secret)
+    # save_s(s)
+    result = server.magic_happens(v, u, ta)
+    if str(result) == '[1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]':
+        print('ok')
+    else:
+        print('rejected')
 
 
 test_pin()
