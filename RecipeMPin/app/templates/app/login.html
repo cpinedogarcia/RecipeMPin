@@ -28,7 +28,9 @@
         <div id="PINcode">
             <section id="loginForm">
                 <form action='' method='' name='PINform' id='PINform' autocomplete='off'>
-                    <input id='PINbox' type='password' value='' name='PINbox' disabled />
+                    {{ form.password }}
+                    <!--<input id='PINbox' type='password' value='' name='PINbox' disabled />
+                    <input id='id_password' type='password' value='' name='PINbox' disabled />-->
                     <br/>
                     <input type='button' class='PINbutton' name='1' value='1' id='1' onClick=addNumber(this); />
                     <input type='button' class='PINbutton' name='2' value='2' id='2' onClick=addNumber(this); />
@@ -44,7 +46,7 @@
                     <br>
                     <input type='button' class='PINbutton clear' name='-' value='clear' id='-' onClick=clearForm(this); />
                     <input type='button' class='PINbutton' name='0' value='0' id='0' onClick=addNumber(this); />
-                    <input type='button' class='PINbutton enter' name='+' value='enter' id='+' onClick=submitForm(PINbox); />
+                    <input type='button' class='PINbutton enter' name='+' value='enter' id='+' onClick=submitForm(password); />
                 </form>
             </section>
         </div>
@@ -59,12 +61,12 @@
 <script type="text/javascript">
     function addNumber(e){
         //document.getElementById('PINbox').value = document.getElementById('PINbox').value+element.value;
-        var v = $( "#PINbox" ).val();
-        $( "#PINbox" ).val( v + e.value );
+        var v = $( "#id_password" ).val();  //PINbox
+        $( "#id_password" ).val( v + e.value );   //PINbox
     }
     function clearForm(e){
         //document.getElementById('PINbox').value = "";
-        $( "#PINbox" ).val( "" );
+        $( "#id_password" ).val( "" );   //PINbox
     }
     function submitForm(e) {
         if (e.value == "") {
@@ -84,7 +86,7 @@
         */
         
         //document.getElementById('PINbox').value = "";
-        $( "#PINbox" ).val( "" );
+        $( "#id_password" ).val( "" );   //PINbox
     };
 };
 </script> {% load staticfiles %}
