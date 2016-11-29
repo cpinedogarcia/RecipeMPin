@@ -1,9 +1,9 @@
 import hashlib
 from random import SystemRandom
 
-from RecipeMPin.app.client import Client
-from RecipeMPin.app.server import Server
-from RecipeMPin.app.trusted_authority import TrustedAuthority
+from app.client import get_x, generate_u, generate_v
+from app.server import get_y, magic_happens
+from app.trusted_authority import TrustedAuthority
 
 
 def hash_identity(identity):
@@ -21,21 +21,35 @@ def save_s(s):
         file_.write('%d' % s)
 
 
-def test_pin():
-    alpha = 1234
-    identity = 'carlos.pinedo@cimat.mx'
-    client = Client(identity, alpha)
-    server = Server(identity)
+# def test_pin():
+#     alpha = 1234
+#     identity = 'carlos.pinedo@cimat.mx'
+#     client = Client(identity, alpha)
+#     server = Server(identity)
+#     ta = TrustedAuthority(alpha)
+#     x, y, secret = client.get_x(), server.get_y(), ta.get_secret()
+#     u = client.generate_u()
+#     v = client.generate_v(y, secret)
+#     result = server.magic_happens(v, u, ta)
+#     if str(result) == '[1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]':
+#         print('ok')
+#     else:
+#         print('rejected')
+
+
+def autenticate(alpha, identity):
     ta = TrustedAuthority(alpha)
-    x, y, secret = client.get_x(), server.get_y(), ta.get_secret()
-    u = client.generate_u()
-    v = client.generate_v(y, secret)
-    # save_s(s)
-    result = server.magic_happens(v, u, ta)
+    x, y, secret = get_x(), get_y(), ta.get_secret()
+    u = generate_u(identity)
+    v = generate_v(identity, alpha, y, secret)
+    result = magic_happens(identity, v, u, ta)
     if str(result) == '[1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]':
         print('ok')
+        return True
+        # with open('failed.txt', 'w+') as file_:
+        #     file_.write('ok')
     else:
         print('rejected')
-
-
-test_pin()
+        return False
+        # with open('failed.txt', 'w+') as file_:
+        #     file_.write('rejected')

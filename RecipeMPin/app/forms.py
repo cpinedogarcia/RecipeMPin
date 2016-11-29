@@ -9,33 +9,35 @@ from django.utils.translation import ugettext_lazy as _
 
 class BootstrapAuthenticationForm(AuthenticationForm):
     """Authentication form which uses boostrap CSS."""
-    #username = forms.CharField(max_length=254,
+    # username = forms.CharField(max_length=254,
     #                           widget=forms.TextInput({
     #                               'class': 'form-control',
     #                               'placeholder': 'User name'}))
-    #password = forms.CharField(label=_("Password"),
+    # password = forms.CharField(label=_("Password"),
     #                           widget=forms.PasswordInput({
     #                               'class': 'form-control',
     #                               'placeholder': 'Password'}))
-    #with open('pin.txt', 'w+') as file_:
+    # with open('pin.txt', 'w+') as file_:
     #    file_.write(str(password))
 
-class Loginpin(forms.Form):
-        #username = forms.CharField(max_length=254,
-        #                       widget=forms.TextInput({
-        #                           'class': 'form-control',
-        #                           'placeholder': 'User name'}))
-        password = forms.IntegerField(label=_("Password"),
-                               widget=forms.PasswordInput({
-                                   'class': 'form-control',
-                                   'placeholder': 'PIN'}))
 
-class Register(forms.Form):
-        username = forms.CharField(max_length=254,
+class Loginpin(forms.Form):
+    username = forms.CharField(max_length=254,
                                widget=forms.TextInput({
                                    'class': 'form-control',
                                    'placeholder': 'User name'}))
-        password = forms.IntegerField(label=_("Password"),
-                               widget=forms.PasswordInput({
+    password = forms.IntegerField(label=_("Password"),
+                                  widget=forms.PasswordInput({
+                                      'class': 'form-control',
+                                      'placeholder': 'PIN'}))
+
+
+class Register(forms.Form):
+    username = forms.CharField(max_length=254,
+                               widget=forms.TextInput({
                                    'class': 'form-control',
-                                   'placeholder': 'PIN'}))
+                                   'placeholder': 'User name'}))
+    password = forms.IntegerField(label=_("Password"),
+                                  widget=forms.PasswordInput({
+                                      'class': 'form-control',
+                                      'placeholder': 'PIN'}))
