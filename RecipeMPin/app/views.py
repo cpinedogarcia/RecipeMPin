@@ -7,7 +7,6 @@ from app.forms import Loginpin, Register
 from django.http import HttpRequest
 from django.shortcuts import render
 
-
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
