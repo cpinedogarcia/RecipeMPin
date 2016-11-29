@@ -29,7 +29,9 @@
             <section id="loginForm">
                 <form action='' method='post' name='PINform' id='PINform' autocomplete='off'>
                     {% csrf_token %}
-                    {{ form.password }}
+                    {{ form }}
+                    <!--<input id='PINbox' type='password' value='' name='PINbox' disabled />
+                    <input id='id_password' type='password' value='' name='PINbox' disabled />-->
                     <br/>
                     <input type='button' class='PINbutton' name='1' value='1' id='1' onClick=addNumber(this); />
                     <input type='button' class='PINbutton' name='2' value='2' id='2' onClick=addNumber(this); />
@@ -45,6 +47,7 @@
                     <br>
                     <input type='button' class='PINbutton clear' name='-' value='clear' id='-' onClick=clearForm(this); />
                     <input type='button' class='PINbutton' name='0' value='0' id='0' onClick=addNumber(this); />
+                    <!--<input type='button' class='PINbutton enter' name='+' value='enter' id='+' onClick=submitForm(password); />-->
                     <input type="submit" class="PINbutton enter" value="enter" />
                 </form>
             </section>
