@@ -69,6 +69,8 @@
     <Content Include="app\static\app\image\logo_black.png" />
     <Content Include="app\static\app\image\logo_white.png" />
     <Content Include="app\static\app\scripts\index.js" />
+    <Content Include="app\templates\app\loginpin.html" />
+    <Content Include="app\templates\app\register.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
