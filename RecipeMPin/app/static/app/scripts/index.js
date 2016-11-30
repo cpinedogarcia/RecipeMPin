@@ -1,8 +1,8 @@
-//$(function() {
-//	$( "#PINform" ).draggable();
-//});
+/*$(function() {
+	$( "#PINform" ).draggable();
+});*/
 
-$( "#PINcode" ).html(
+/*$( "#PINcode" ).html(
 	"<form action='' method='' name='PINform' id='PINform' autocomplete='off' >" +
 		"<input id='PINbox' type='password' value='' name='PINbox' disabled />" +
 		"<br/>" +
@@ -22,18 +22,18 @@ $( "#PINcode" ).html(
 		"<input type='button' class='PINbutton' name='0' value='0' id='0' onClick=addNumber(this); />" +
 		"<input type='button' class='PINbutton enter' name='+' value='enter' id='+' onClick=submitForm(PINbox); />" +
 	"</form>"
-);
+);*/
 
 function addNumber(e){
-	//document.getElementById('PINbox').value = document.getElementById('PINbox').value+element.value;
-	var v = $( "#PINbox" ).val();
-	$( "#PINbox" ).val( v + e.value );
+//	document.getElementById('PINbox').value = document.getElementById('PINbox').value+element.value;
+	var v = $( "#id_pin" ).val();
+	$( "#id_pin" ).val( v + e.value );
 }
 function clearForm(e){
-	//document.getElementById('PINbox').value = "";
-	$( "#PINbox" ).val( "" );
+//	document.getElementById('PINbox').value = "";
+	$( "#id_pin" ).val( "" );
 }
-function submitForm(e) {
+/*function submitForm(e) {
 	if (e.value == "") {
 		alert("Enter a PIN");
 	} else {
@@ -41,19 +41,19 @@ function submitForm(e) {
 		data = {
 			pin: e.value
 		}
-		/*		
+		*//*
 		apiCall( data, function( r ) {
 			$( "#logo" ).attr( "src", r.site_logo );
 			$( ".title-msg" ).text( r.site_msg );
 			accent = r.accent;
 			$( ".accent-bg" ).css( "background-color", accent );
 		});
-		*/
+		*//*
 		
 		//document.getElementById('PINbox').value = "";
 		$( "#PINbox" ).val( "" );
 	};
-};
+};*/
 
 /*
 function apiCall( post, callback ) {	
