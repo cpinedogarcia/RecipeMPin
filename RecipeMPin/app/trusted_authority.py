@@ -2,11 +2,14 @@ from charm.core.math.pairing import G2
 from charm.toolbox.pairinggroup import PairingGroup
 from charm.toolbox.securerandom import OpenSSLRand
 
+from RecipeMPin import settings
+
 
 class TrustedAuthority():
     def __init__(self, alpha):
         self.group = PairingGroup('BN256')
-        self.token = self.generate_random()
+        self.token = settings.TOKEN
+        # self.token = self.generate_random()
         # with open('token.plain', 'r+') as file:
         #     file.seek(0)
         #     first_char = file.read(1)

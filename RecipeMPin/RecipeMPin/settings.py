@@ -16,7 +16,6 @@ import posixpath
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = 'f2b13584-3e85-4955-ba1b-2ca229347254'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -73,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'RecipeMPin.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
@@ -84,9 +81,10 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
+
+# AUTHENTICATION_BACKENDS = ['app.authentication_backend.AuthenticationBackend']
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,7 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -117,10 +114,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+LOGIN_URL = 'login'
+
+LOGOUT_REDIRECT_URL = '/'
+
+TOKEN = 114498589172844871992389404490736791036251041320675752830175739577359978279851
+Q = 0000000000000000000

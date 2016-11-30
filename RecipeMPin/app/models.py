@@ -7,6 +7,6 @@ from django.contrib.auth.models import models
 
 
 # Create your models here.
-class twostep(models.Model):
+class TwoStep(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     pin = models.IntegerField()

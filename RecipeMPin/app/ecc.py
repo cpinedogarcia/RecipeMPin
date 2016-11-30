@@ -37,19 +37,21 @@ def save_s(s):
 #         print('rejected')
 
 
-def autenticate(alpha, identity):
-    ta = TrustedAuthority(alpha)
+def autenticate(alpha, identity, pin):
+    ta = TrustedAuthority(pin)
     x, y, secret = get_x(), get_y(), ta.get_secret()
+    with open('secret.txt', 'w+') as file_:
+        file_.write(str(secret))
     u = generate_u(identity)
     v = generate_v(identity, alpha, y, secret)
     result = magic_happens(identity, v, u, ta)
     if str(result) == '[1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]':
         print('ok')
+        with open('failed.txt', 'w+') as file_:
+            file_.write('ok')
         return True
-        # with open('failed.txt', 'w+') as file_:
-        #     file_.write('ok')
     else:
         print('rejected')
+        with open('failed.txt', 'w+') as file_:
+            file_.write('rejected')
         return False
-        # with open('failed.txt', 'w+') as file_:
-        #     file_.write('rejected')
