@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f2b13584-3e85-4955-ba1b-2ca229347254'
+SECRET_KEY = 'brrrr-brrr-brrrrr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -125,4 +125,4 @@ LOGIN_URL = 'login'
 
 LOGOUT_REDIRECT_URL = '/'
 
-TOKEN = 114498589172844871992389404490736791036251041320675752830175739577359978279851
+TOKEN = 123
